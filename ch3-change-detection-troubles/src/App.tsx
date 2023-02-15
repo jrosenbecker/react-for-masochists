@@ -1,6 +1,7 @@
 import './App.scss';
 import { Counter } from './Counter';
 import { RandomWords } from './RandomWords/RandomWords';
+import { RandomWordsCorrect } from './RandomWords/RandomWordsCorrect';
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
       <Counter></Counter>
 
       <RandomWords></RandomWords>
+
+      <RandomWordsCorrect></RandomWordsCorrect>
     </div>
   );
 }
