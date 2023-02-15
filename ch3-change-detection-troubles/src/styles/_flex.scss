@@ -11,6 +11,14 @@
   flex-direction: row;
 }
 
+.flex-big-gap {
+  gap: 4rem;
+}
+
+.flex-small-gap {
+  gap: 1rem;
+}
+
 .justify-center {
   justify-content: center;
 }

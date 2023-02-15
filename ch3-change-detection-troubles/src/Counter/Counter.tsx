@@ -14,7 +14,7 @@ export const Counter: FC = () => {
   }
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row bg-blue p4 rounded">
       <button onClick={decrementCount}>-</button>
       <div className="m4">{count}</div>
       <button onClick={incrementCount}>+</button>
