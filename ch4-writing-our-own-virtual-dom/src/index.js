@@ -1,7 +1,13 @@
 /** @jsx jsxToJS */
+// ^^ The above line tells bable to use our jsxToJS functoin instead of React.createElement when transpiling JSX
 
 // Credit to this article - which walked me through writing my own Virtual DOM: https://medium.com/@deathmood/how-to-write-your-own-virtual-dom-ee74acc13060
 
+/**
+ * Takes in information about what our dom node is, its props, and children and converts it to 
+ * a javascript object we can use for our virtual DOM. This will get called automatically when we see a
+ * JSX template.
+ */
 function jsxToJS(type, props, ...children) {
   return { type, props, children }
 }
@@ -29,12 +35,20 @@ function createElement(node) {
   return $el;
 }
 
+/**
+ * This function contains our logic for determining if a particular node has changed,
+ * which drives whether it should rerender or not.
+ */
 function changed(node1, node2) {
   return typeof node1 !== typeof node2 ||
          typeof node1 === 'string' && node1 !== node2 ||
          node1.type !== node2.type
 }
 
+/**
+ * Recursively updates the DOM by checking the old state versus the new state. If
+ * the node has changed, then it will replace it in the REAL dom.
+ */
 function updateElement($parent, newNode, oldNode, index = 0) {
   // If there is no old node, then we have to create the noe
   if (!oldNode) {
