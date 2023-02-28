@@ -1,15 +1,15 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 
 export const Counter: FC = () => {
-  let count = 0
+  let [count, setCount] = useState(0)
 
   const decrementCount = () => {
-    count -= 1
+    setCount(count - 1);
   }
 
   const incrementCount = () => {
-    count += 1
+    setCount(count + 1);
   }
 
   return (

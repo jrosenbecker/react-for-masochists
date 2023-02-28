@@ -6,7 +6,7 @@
 /**
  * Takes in information about what our dom node is, its props, and children and converts it to 
  * a javascript object we can use for our virtual DOM. This will get called automatically when we see a
- * JSX template.
+ * JSX template. This function becomes our new "React.createElement"
  */
 function jsxToJS(type, props, ...children) {
   return { type, props, children }
